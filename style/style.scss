@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 $darkenColor:#181824;
 $darkColor:#000036;
 $secondaryColor:#282162;
 $primaryColor:#7562E0;
+$white:#fff;
+$marginSize:3.5rem;
 
+h1,h2,h3,h4{ color:$primaryColor; }
 body{
+  font-family: 'Poppins', sans-serif;
   background-color: $darkenColor;
-  color:$primaryColor;
+  color:$white;
   > header{
     height:3rem;
     display:flex;
@@ -65,7 +70,7 @@ body{
       }
     }
     h1{
-      margin:0 0 0 3.5rem;
+      margin:0 0 0 $marginSize;
     }
     @media (min-width:768px){
       label{
@@ -79,7 +84,7 @@ body{
           width:100%;
           display:flex;
           justify-content: end;
-          margin-right:3.5rem;
+          margin-right:$marginSize;
           gap:1rem;
           padding:0;
         }
@@ -87,6 +92,54 @@ body{
     }
   }
 
-
-  
+  #home{
+    // border:5px dashed red;
+    display:flex;
+    flex-direction: column-reverse;
+    margin:0 $marginSize;
+    header{
+      flex:1;
+      display:flex;
+      flex-direction: column;
+      .wrapper{
+        h2{
+          color:$white;
+          margin:0;
+        }
+        p{
+          margin:.5rem auto;
+        }
+        .desc{
+          font-weight: 500;
+          font-size:.7em;
+        }
+      }
+      .buttonField{
+        padding-top:10px;
+        a{
+          border:2px solid $primaryColor;
+          text-decoration: none;
+          border-radius: 5px;
+          padding:5px 10px;
+          color:#fff;
+          &:nth-child(1){
+            background-color: $primaryColor;
+          }
+        }
+      }
+    }
+    .imgWrapper{
+      flex:1;
+      display:flex;
+      justify-content: center;
+      // border:5px dashed violet;
+      img{
+        max-width:100%;
+      }
+    }
+    @media (min-width:768px){
+      padding:$marginSize*2 0;
+      flex-direction: row;
+    }
+  }
 }

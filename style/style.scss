@@ -116,12 +116,23 @@ body{
       }
     }
   }
+  // na wszystkie sekcje pod body dodaj margines z prawej i lewej
+  > section, main{
+    margin:0 $marginSize;
+    @media(min-width:768px){ 
+      width:60%; 
+      margin:0 auto;
+    }
+    @media(min-width:1280px){ 
+      width:50%; 
+    }
+
+  }
 
   #home{
     display:flex;
     flex-direction: column-reverse;
     align-items: center;
-    margin:0 $marginSize;
     padding:$marginSize*2 0;
     header{
       flex:1;
@@ -165,7 +176,22 @@ body{
   }
 
   #about{
-    
+    h2{margin-bottom: 0;}
+    > p{
+      margin:0;
+      font-size:.8em;
+    }
+    div{
+      display:flex;
+      align-items: center;
+      span{
+        color:$primaryColor;
+        font-size:3.5em;
+      }
+      p{
+        padding-left:1em;
+      }
+    }
 
   }
 

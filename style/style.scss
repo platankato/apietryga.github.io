@@ -5,9 +5,7 @@ $secondaryColor:#282162;
 $primaryColor:#7562E0;
 $white:#fff;
 $marginSize:3.5rem;
-
 h1,h2,h3,h4{ color:$primaryColor; }
-
 .button{
   text-decoration: none;
   border:2px solid $primaryColor;
@@ -165,4 +163,11 @@ body{
       flex-direction: row;
     }
   }
+
+  #about{
+    
+
+  }
+
+
 }

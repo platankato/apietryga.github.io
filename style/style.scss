@@ -4,6 +4,7 @@ $darkColor:#000036;
 $secondaryColor:#282162;
 $primaryColor:#7562E0;
 $white:#fff;
+$cardBackground: #31313F;
 $marginSize:3.5rem;
 h1,h2,h3,h4{ color:$primaryColor; }
 .button{
@@ -234,6 +235,40 @@ body{
 
   }
 
+  #projects{
+    .container{
+      display:flex;
+      gap:1em;
+      flex-wrap: wrap;
+      justify-content: center;
+      article{
+        padding:1em;
+        background-color: $cardBackground;
+        border-radius: 8px;
+        max-width:311px;
+        img{
+          max-width:100%;
+        }
+      }
+    }
 
-  
+    @media (min-width:768px) and (max-width:1250px){
+      article{
+        // 50% - obszar jednego przycisku
+        // 2.5em - połowa wszystkich paddingów
+        // i gapów w kontenerze ( 4paddingi i 1 gap)
+        width:calc(50% - 2.5em);
+      }
+    }
+    @media (min-width:1250px){
+      article{
+        // 33% - obszar jednego przycisku (100%/3)
+        // 8em - wszystkie paddingi i gapy
+        // w kontenerze ( 6paddingi i 2 gapy)
+        width:calc( 33% - 8em/3 );
+      }
+    }
+
+  }
+
 }

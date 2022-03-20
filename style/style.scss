@@ -7,23 +7,44 @@ $white:#fff;
 $marginSize:3.5rem;
 
 h1,h2,h3,h4{ color:$primaryColor; }
+
+.button{
+  text-decoration: none;
+  border:2px solid $primaryColor;
+  border-radius: 5px;
+  padding:5px 15px;
+  color:$white;
+  font-size:.7em;
+  &.fill{
+    background-color: $primaryColor;
+  }
+}
+
 body{
   font-family: 'Poppins', sans-serif;
   background-color: $darkenColor;
   color:$white;
+  margin:0;
   > header{
+    padding:8px;
+    position: sticky;
+    z-index:2;
+    top:0;
+    background-color: $darkenColor;
+
     height:3rem;
     display:flex;
     align-items: center;
     input{display:none;}
     label{
+      z-index:1;
       width:3rem;
       height:3rem;
-      position:fixed;
+      position:absolute;
       cursor: pointer;
       div{
         transition: .5s;
-        background-color:#000;
+        background-color:$primaryColor;
         height:5px;
         width:100%;
         position: absolute;
@@ -39,19 +60,25 @@ body{
       }
     }
     nav{
-      display:none;
+      transition:.5s;
       position:fixed;
+      background-color: $darkenColor;
       left:0;
-      top:0;
+      top:calc(-100% - 3.5rem);
       width:100%;
-      height:100%;
+      height:fit-content;
       margin-top:3.5rem;
       ul{
         list-style-type: none;
+        a{
+          text-decoration: none;
+          color:$white;
+        }
       }
     }
     #toggler:checked ~ nav{
-      display:block;
+      // display:block;
+      top:0;
     }
     #toggler:checked ~ label{
       div{
@@ -93,52 +120,46 @@ body{
   }
 
   #home{
-    // border:5px dashed red;
     display:flex;
     flex-direction: column-reverse;
+    align-items: center;
     margin:0 $marginSize;
+    padding:$marginSize*2 0;
     header{
       flex:1;
       display:flex;
       flex-direction: column;
+      align-items: center;
       .wrapper{
+        p{
+          margin:.5rem auto;
+          font-size:clamp(.7em, 6vw, 2.5em);
+        }
         h2{
           color:$white;
           margin:0;
-        }
-        p{
-          margin:.5rem auto;
+          font-size:clamp(1em, 10vw, 4em);
+          line-height: 1em;
         }
         .desc{
-          font-weight: 500;
           font-size:.7em;
+          padding-right:5em;
         }
       }
       .buttonField{
         padding-top:10px;
-        a{
-          border:2px solid $primaryColor;
-          text-decoration: none;
-          border-radius: 5px;
-          padding:5px 10px;
-          color:#fff;
-          &:nth-child(1){
-            background-color: $primaryColor;
-          }
-        }
+        width:100%;
       }
     }
     .imgWrapper{
       flex:1;
       display:flex;
       justify-content: center;
-      // border:5px dashed violet;
       img{
         max-width:100%;
       }
     }
     @media (min-width:768px){
-      padding:$marginSize*2 0;
       flex-direction: row;
     }
   }

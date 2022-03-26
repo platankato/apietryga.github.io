@@ -13,7 +13,8 @@ h1,h2,h3,h4{ color:$primaryColor; }
   border-radius: 5px;
   padding:5px 15px;
   color:$white;
-  font-size:.7em;
+  // font-size:.7em;
+  font-size:clamp(.4em, 3vw, .7em);
   &.fill{
     background-color: $primaryColor;
   }
@@ -238,10 +239,11 @@ body{
   #projects{
     .container{
       display:flex;
-      gap:1em;
+      // gap:1em;
       flex-wrap: wrap;
       justify-content: center;
       article{
+        margin:.5em;
         padding:1em;
         background-color: $cardBackground;
         border-radius: 8px;
@@ -256,16 +258,16 @@ body{
       article{
         // 50% - obszar jednego przycisku
         // 2.5em - połowa wszystkich paddingów
-        // i gapów w kontenerze ( 4paddingi i 1 gap)
-        width:calc(50% - 2.5em);
+        // i marginesów w kontenerze ( 4em padding i 2em margines)
+        width:calc(50% - 3em);
       }
     }
     @media (min-width:1250px){
       article{
         // 33% - obszar jednego przycisku (100%/3)
-        // 8em - wszystkie paddingi i gapy
-        // w kontenerze ( 6paddingi i 2 gapy)
-        width:calc( 33% - 8em/3 );
+        // 9em - wszystkie paddingi i marginesy
+        // w kontenerze ( 6em padding i 3em margin)
+        width:calc( 33% - 9em/3 );
       }
     }
 
